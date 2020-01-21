@@ -27,7 +27,7 @@ function select_tipo(t){
 	
 }
 
-function versubmenu(){$(".topselector").slideDown();if(submenucatv){$(".submenusubcategoria").animate({opacity:.2})}}
+function versubmenu(){$(".topselector").css("display","block");if(submenucatv){$(".submenusubcategoria").animate({opacity:.2})}}
 function setupsubcategorias(){
 
 	$(".botonsubcat,.botonsegmento").remove();
