@@ -1,11 +1,11 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
+  "name": "Lineales",
+  "short_name": "Lineales",
   "version": "com.phonegap.helloworld",
-  "description": "Hello World sample application that responds to the deviceready event.",
-  "author": "PhoneGap Team",
+  "description": "APP lineales",
+  "author": "Señor Valladares",
   "icons": [],
   "start_url": "index.html"
 }

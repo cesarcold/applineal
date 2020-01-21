@@ -1,14 +1,70 @@
 <!doctype html>
 <html>
-	<head><style>html,body{padding:0;margin:0}</style>
-<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>APP</title>
+<link href="css/index.css" rel="stylesheet" type="text/css">
+		<link href="css/app.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>	
+		<script src="js/functions.js"></script>	
 </head>
 
 <body>
 	<div class="wrapper">
-		<img src="img/home.jpg"/>
+		<div class="homepage"><div class="botonhome"></div></div>
 		</div>
+	 	<div class="teoricoactual">
+		<div class="top"><div class="logo"></div><div class="titulo"><strong>REPARTO ESPACIO LINEAL:</strong><span class="nl">TEÓRICO Y ACTUAL</span></div><div class="right"></div></div>
+<div class="img"><img src="img/reparto.png"/></div>
+		<div class="footer"><img src="img/bonpreu.png"><div class="text"><strong>PLANOS DE MASAS  | </strong> Súper Mediano</div>
+			<div class="footerright"><div class="botonfooter">Ver Lineal Actual</div></div>
+ </div>
+		
+		</div>
+	 
+	 	<div class="lineal1">
+		<div class="top"><div class="logo"></div><div class="titulo"><strong>LINEAL ACTUAL <a href="javascript:versubmenu()"><img src="img/flecha2.png"></a></strong> </div><div class="right"></div>
+		
+			<div class="topselector"><ul><li onClick="select_tipo(1)">PLANO DE MASAS POR SUBCATEGORÍA</li><li onClick="select_tipo(2)">PLANO DE MASAS POR SEGMENTOS</li></ul></div> </div>
+			<div class="top2">	<div class="subtitulo"></div>
+			<div class="submenusubcategoria"></div>
+			<div class="submenusegmentos"></div>
+			</div>
+			
+<div class="img"><div class="hl hl0"></div>	<div class="hl hl1"></div><div class="hl hl2"></div><div class="hl hl3"></div>
+	<div class="hl hl0-0"></div>	<div class="hl hl0-1"></div> 	<div class="hl hl0-2"></div> 	<div class="hl hl0-3"></div>
+		<div class="hl hl0-4"></div> 	<div class="hl hl1-0"></div> <div class="hl hl1-1"></div>
+	<div class="hl hl2-0"></div>	<div class="hl hl2-1"></div> 	<div class="hl hl2-2"></div> 	<div class="hl hl2-3"></div>	<div class="hl hl3-0"></div>
+	
+	<img src="img/lineal.png" class="linealimg"/></div>
+		<div class="footer"><img src="img/bonpreu.png"><div class="text"><strong>PLANOS DE MASAS  | </strong> Súper Mediano</div>
+			<div class="footerright"><div class="botonfooter">Ver análisis del lineal</div></div>
+ </div>
+		
+		</div>
+	
+	
+		 	<div class="lineal2">
+		<div class="top"><div class="logo"></div><div class="titulo"><strong>ANÁLISIS LINEAL ACTUAL </strong> </div><div class="right"></div>
+		
+	 			<div class="top2">				<div class="submenuanalisis"></div></div>
+			</div>
+			
+<div class="img"><div class="an an0"></div> <div class="an an1"></div> <div class="an an2"></div>
+	<img src="img/lineal.png" class="linealimg"/></div>
+		<div class="footer"><img src="img/bonpreu.png"><div class="text"><strong>PLANOS DE MASAS  | </strong> Súper Mediano</div>
+			<div class="footerright"><div class="botonfooter">Editar lineal actual</div></div>
+ </div>
+		
+		</div>
+	
+	
+	
+	
 </body>
+	<script>
+$(document).ready(function() {
+	setuphome();})
+		</script>
 </html>
