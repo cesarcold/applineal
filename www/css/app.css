@@ -79,7 +79,8 @@ html {background: #000; font-family: 'barlowmedium';  }
 .top2{margin-top:-26px;display: none;}
 .subtitulo{color:#fff;text-align:center;font-size:22px;font-family:'barlowmedium'}
 .submenusubcategoria,.submenusegmentos,.submenuanalisis{display:flex;justify-content:center;align-items:center;position: absolute;width: 900px;margin-left: 50%;left: -450px;z-index:666; }
-.lineal2 .submenuanalisis{width: 960px;left: -480px;}
+.lineal2 .submenuanalisis{width: 960px;left: -480px;padding-top:100px;}
+.submenuanalisis {margin-top: 0;}
 .submenusegmentos{width: 1200px;margin-left: 50%;left: -600px;flex-wrap: wrap;}
 .botonsubcat,.botonsegmento,.botonanalisis{font-size:18px;text-transform:uppercase;color:#fff;padding:5px 33px;background-color:#525558;border-radius:17px;border:2px solid #fff;margin:100px 5px 0 5px;font-family:barlowmedium}
 .botonsegmento {margin: 25px 5px 0 5px;	}
