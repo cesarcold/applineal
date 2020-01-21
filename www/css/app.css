@@ -35,9 +35,9 @@ html {background: #000; font-family: 'barlowmedium';  }
 .wrapper{position: relative;}
 .botonhome {background-position:center top;background-repeat:no-repeat;background-image:url(../img/botonentrar.png);position: absolute; width:257px;height: 66px;top: 611px;left: 90px;}
 .nl{display: block;}
-.top {position: relative; color:#fff;font-size: 35px; text-align: center;display: flex;align-items: last baseline;justify-content: space-around;}
+.top {position: relative; color:#fff;font-size: 35px; text-align: center;display: flex;align-items: baseline;justify-content: space-around;z-index:777;}
 .logo {background-position:center center;background-repeat:no-repeat;background-image:url(../img/logo.png);height:97px;top: 23px;left: 100px;position: relative;flex-grow: 1}
-.titulo {width:auto;flex-grow: 11;margin: 30px 0;font-family: 'barlowmedium'; }
+.titulo {width:auto;flex-grow: 11;margin: 30px 0;font-family: 'barlowmedium';display: block;padding-left:40px}
 .titulo strong{font-family: 'barlowbold'}
 .right {flex-grow: 1; ;}
 .teoricoactual .img {    display: flex;   justify-content: center;    align-content: center;    margin: 13px;}
@@ -47,7 +47,7 @@ html {background: #000; font-family: 'barlowmedium';  }
 .footer strong {  font-family: 'barlowbold';}
 .footerright{display: flex; justify-content: flex-end;   align-content: center;  text-transform:uppercase; }
 .footerright .botonfooter { font-family: 'barlowmedium'; font-size: 26px;background-position:right center;background-repeat:no-repeat;background-image:url(../img/flecha.png); padding-right: 40px;}
-.topselector{position:absolute;z-index:667;width:550px;top:123px;background-color:#e2e2e3;font-size:22px;color:#333231;text-align: left;font-family:'barlowmedium';display: none;}
+.topselector{position:absolute;z-index:667;width:550px;top:123px;background-color:#e2e2e3;font-size:22px;color:#333231;text-align: left;font-family:'barlowmedium';display: none;left:-225px;margin-left: 50%;}
 .topselector ul{list-style:none;margin: 0;padding: 0;}
 .topselector li{border-bottom:1px solid #003064;height:53px;padding:0!important;margin:0!important;display:flex;align-items:center;background-position: 97% center;background-repeat: no-repeat;background-image: url(../img/mas.png);text-indent: 20px; }
 .hl{display: none;position: absolute;width: 100%;height: 864px;background-repeat: no-repeat;z-index:43}
@@ -79,8 +79,8 @@ html {background: #000; font-family: 'barlowmedium';  }
 .top2{margin-top:-26px;display: none;}
 .subtitulo{color:#fff;text-align:center;font-size:22px;font-family:'barlowmedium'}
 .submenusubcategoria,.submenusegmentos,.submenuanalisis{display:flex;justify-content:center;align-items:center;position: absolute;width: 900px;margin-left: 50%;left: -450px;z-index:666; }
-.lineal2 .submenuanalisis{width: 960px;left: -480px;padding-top:100px;}
-.submenuanalisis {margin-top: 0;}
+.lineal2 .submenuanalisis{width: 960px;left: -480px;}
+.submenuanalisis {/*margin-top:100px;*/}
 .submenusegmentos{width: 1200px;margin-left: 50%;left: -600px;flex-wrap: wrap;}
 .botonsubcat,.botonsegmento,.botonanalisis{font-size:18px;text-transform:uppercase;color:#fff;padding:5px 33px;background-color:#525558;border-radius:17px;border:2px solid #fff;margin:100px 5px 0 5px;font-family:barlowmedium}
 .botonsegmento {margin: 25px 5px 0 5px;	}
