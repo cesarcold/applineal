@@ -7,7 +7,9 @@
 <link href="css/index.css" rel="stylesheet" type="text/css">
 		<link href="css/app.css" rel="stylesheet" type="text/css">
 <script src="js/jquery.min.js"></script>	
+ <script src="js/jcanvas.min.js"></script>	
 		<script src="js/functions.js"></script>	
+		
 </head>
 
 <body>
@@ -60,8 +62,69 @@
 		</div>
 	
 	
+		 	<div class="lineal3">
+		<div class="top"><div class="logo"></div><div class="titulo"><strong>EDITAR LINEAL ACTUAL</strong> </div><div class="right"></div>
+			</div>
+	 			<div class="top2">				<div class="submenueditar">
+					<div class="botoneditar be1">Tasa de morralla</div>
+					<div class="botoneditar be2">SKU’S SOBREDIMENSIONADAS</div>
+					<div class="botoneditar be3">SKU’s INFRADIMENSIONADAS</div>
+					<div class="botoneditar be4">ALTAS</div>
+					</div>
+				<div class="calculadora"><div class="calctitle">Facturación teórica del lineal</div>
+					<div class="calctotal">12.000.000€</div></div>
+				</div>
+		
+			
+<div class="img"> 
+	<canvas id="canvas1" width="1920" height="894"></canvas></div>
+		<div class="footer"><img src="img/bonpreu.png"><div class="text"><strong>PLANOS DE MASAS  | </strong> Súper Mediano</div>
+			<div class="footerright"><div class="botonfooter">Editar lineal actual</div></div>
+ </div>
+		
+		</div>
 	
 	
+	
+	
+	
+	
+	
+	
+		<div class="lineal4">
+		<div class="top"><div class="logo"></div><div class="titulo" onClick="versubmenu()"><strong>LINEAL PROPUESTO  <img src="img/flecha2.png"> </strong> </div><div class="right"></div>
+		
+			<div class="topselector"><ul><li onClick="select_tipo2(1)">PLANO DE MASAS POR SUBCATEGORÍA</li><li onClick="select_tipo2(2)">PLANO DE MASAS POR SEGMENTOS</li></ul></div> </div>
+			<div class="top2">	<div class="subtitulo"></div>
+			<div class="submenusubcategoria"></div>
+			<div class="submenusegmentos"></div>
+			</div>
+			
+<div class="img"><div class="hl hl0"></div>	<div class="hl hl1"></div><div class="hl hl2"></div><div class="hl hl3"></div>  
+	<div class="hl hl0-0"></div>	<div class="hl hl0-1"></div> 	<div class="hl hl0-2"></div> 	<div class="hl hl0-3"></div>
+		<div class="hl hl0-4"></div> 	<div class="hl hl1-0"></div> <div class="hl hl1-1"></div>
+	<div class="hl hl2-0"></div>	<div class="hl hl2-1"></div> 	<div class="hl hl2-2"></div> 	<div class="hl hl2-3"></div>	<div class="hl hl3-0"></div>
+	
+	<img src="img/lineal7.png" class="linealimg"/></div>
+		<div class="footer"><img src="img/bonpreu.png"><div class="text"><strong>PLANOS DE MASAS  | </strong> Súper Mediano</div>
+			<div class="footerright"><!--<div class="botonfooter">Ver análisis del lineal</div>/--></div>
+ </div>
+		
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<img src="img/lineal2.png" style="display: none"><img src="img/lineal3.png" style="display: none"><img src="img/lineal4.png" style="display: none"><img src="img/lineal5.png" style="display: none"><img src="img/lineal6.png" style="display: none">
+<img src="img/linealb.png" style="display: none">	<img src="img/lineal2b.png" style="display: none"><img src="img/lineal3b.png" style="display: none"><img src="img/lineal4b.png" style="display: none"><img src="img/lineal5b.png" style="display: none"><img src="img/lineal6b.png" style="display: none">
 </body>
 	<script>
 $(document).ready(function() {
