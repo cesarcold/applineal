@@ -81,7 +81,7 @@ if(negativo){
 }
 
 function errorCallback(err){
-alert(err);
+//alert(err);
 }
 
 function databasesetup(){
@@ -205,7 +205,7 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
  $(".repartowrapper").css("display","block").css("opacity",1);$(".lineal4").css("display","none");$(".img").css("display","none").fadeIn("slow");
  db.transaction(function (tx) { 
             tx.executeSql('SELECT * FROM items WHERE tipo="BAJA" ORDER by precio desc', [], function (tx, results) { 
-       alert(";;;;;;;;");
+     //  alert(";;;;;;;;");
       len=results.rows.length;
                for (i = 0; i < len; i++) { 
          rellenaitems(1,results.rows.item(i))
