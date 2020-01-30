@@ -36,8 +36,8 @@ data.push(new Array("Tostado","LAVAZZA MOLIDO CREMA E GUSTO 250G",151735.56,"BAJ
 data.push(new Array("Sistemas","NDG GRANDE INTENSO (16CAPS)",146412.53,"ALTA","grandeintensondg"));
 data.push(new Array("Sistemas","STARBUCKS BY NESPRESSO VERONA",144111.44,"ALTA","sbuxnespressoverona"));
 data.push(new Array("Sistemas","STARBUCKS BY NESPRESSO HOUSE BLEND",126428.33,"ALTA","sbuxnespressohouseblend"));
-data.push(new Array("Tostado","LAVAZZA GRANO ESPRESSO 500G",125966.88,"BAJA","lavazzagranocaffèespresso500g"));
-data.push(new Array("Tostado","LAVAZZA MOLIDO EXPRESS NATURAL 250G",125237.49,"BAJA","lavazzamolidocaffèespresso250gmolido2"));
+data.push(new Array("Tostado","LAVAZZA GRANO ESPRESSO 500G",125966.88,"BAJA","lavazzagranocaffeespresso500g"));
+data.push(new Array("Tostado","LAVAZZA MOLIDO EXPRESS NATURAL 250G",125237.49,"BAJA","lavazzamolidocaffeespresso250gmolido2"));
 data.push(new Array("Soluble","MARCILLA CREME EXPRESS DESCAFEINADO 200G",114174.55,"BAJA","marcillasenseoextrafuerte28uds"));
 data.push(new Array("Tostado","BONKA MOLIDO DESCAFEINADO 250G",100140.09,"ALTA","bonkamolidodescafeinado250g"));
 data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NDG ESPRESSO FORTE",94310.22,"BAJA","caferoyalespressoforte16capsulesndg"));
@@ -98,7 +98,25 @@ db.transaction(function (tx) {
 
 
 
-function setuphome(){$(".botonhome").bind("click",startapp);}
+function setuphome(){$(".botonhome").bind("click",startapp);
+					
+					
+var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
+
+
+
+db.transaction(function (tx) {   
+	  tx.executeSql('DROP table items'); 
+   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
+	  tx.executeSql('DELETE FROM items');
+ 
+	data.forEach( item =>
+ tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")')
+ 
+			 );
+});
+
+					}
 function startapp(){ $(".teoricoactual").css("display","block");$(".homepage").css("display","none");$(".img").css("display","none").fadeIn("slow");
 $(".teoricoactual .botonfooter").click(f_lineal1)				   				   }
 function f_lineal1(){$(".lineal1").css("display","block");$(".teoricoactual").css("display","none");$(".img").css("display","none").fadeIn("slow");	$(".lineal1 .botonfooter").unbind("click").click(f_lineal3);}
