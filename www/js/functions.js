@@ -86,6 +86,7 @@ var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
 db.transaction(function (tx) {   
 	  tx.executeSql('DROP table items'); 
+	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)")
    tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
 	  tx.executeSql('DELETE FROM items');
  
@@ -107,6 +108,8 @@ var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 alert(db);
 
 db.transaction(function (tx) {   
+	alert("dsdssdsd");
+	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img22)")
 	  tx.executeSql('DROP table items'); 
    tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
 	  tx.executeSql('DELETE FROM items');
