@@ -79,7 +79,7 @@ if(negativo){
 		
 	}
 }
-
+document.addEventListener("deviceready", function() {
 var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
 
@@ -94,7 +94,8 @@ db.transaction(function (tx) {
  
 			 );
 });
-
+	alert("DSDSD")
+})
 
 
 
@@ -103,7 +104,7 @@ function setuphome(){$(".botonhome").bind("click",startapp);
 					
 var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
-
+alert(db);
 
 db.transaction(function (tx) {   
 	  tx.executeSql('DROP table items'); 
