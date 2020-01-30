@@ -36,7 +36,7 @@ data.push(new Array("Tostado","LAVAZZA MOLIDO CREMA E GUSTO 250G",151735.56,"BAJ
 data.push(new Array("Sistemas","NDG GRANDE INTENSO (16CAPS)",146412.53,"ALTA","grandeintensondg"));
 data.push(new Array("Sistemas","STARBUCKS BY NESPRESSO VERONA",144111.44,"ALTA","sbuxnespressoverona"));
 data.push(new Array("Sistemas","STARBUCKS BY NESPRESSO HOUSE BLEND",126428.33,"ALTA","sbuxnespressohouseblend"));
-data.push(new Array("Tostado","LAVAZZA GRANO ESPRESSO 500G",125966.88,"BAJA","lavazzagranocaffèespresso500g"));
+data.push(new Array("Tostado","LAVAZZA GRANO ESPRESSO 500G",125966.88,"BAJA","lavazzagranocaffeespresso500g"));
 data.push(new Array("Tostado","LAVAZZA MOLIDO EXPRESS NATURAL 250G",125237.49,"BAJA","lavazzamolidocaffèespresso250gmolido2"));
 data.push(new Array("Soluble","MARCILLA CREME EXPRESS DESCAFEINADO 200G",114174.55,"BAJA","marcillasenseoextrafuerte28uds"));
 data.push(new Array("Tostado","BONKA MOLIDO DESCAFEINADO 250G",100140.09,"ALTA","bonkamolidodescafeinado250g"));
