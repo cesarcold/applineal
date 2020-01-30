@@ -95,7 +95,7 @@ db.transaction(function (tx) {
  
 			 );
 });
-	alert("DSDSD")
+ 
 })
 
 
@@ -105,10 +105,10 @@ function setuphome(){$(".botonhome").bind("click",startapp);
 					
 var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
-alert(db);
+
 
 db.transaction(function (tx) {   
-	alert("dsdssdsd");
+	 
 	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img22)")
 	  tx.executeSql('DROP table items'); 
    tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
@@ -212,7 +212,7 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
  $(".repartowrapper").css("display","block").css("opacity",1);$(".lineal4").css("display","none");$(".img").css("display","none").fadeIn("slow");
  db.transaction(function (tx) { 
             tx.executeSql('SELECT * FROM items WHERE tipo="BAJA" ORDER by precio desc', [], function (tx, results) { 
-            
+            alert('SELECT * FROM items WHERE tipo="BAJA" ORDER by precio desc');
       len=results.rows.length;
                for (i = 0; i < len; i++) { 
          rellenaitems(1,results.rows.item(i))
