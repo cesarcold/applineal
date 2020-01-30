@@ -79,19 +79,24 @@ if(negativo){
 		
 	}
 }
+
+function errorCallback(err){
+alert(err);
+}
+
 document.addEventListener("deviceready", function() {
   db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
 
 
 db.transaction(function (tx) {   
-	  tx.executeSql('DROP table items'); 
-	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)")
-   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
-	  tx.executeSql('DELETE FROM items');
+	  tx.executeSql('DROP table items',[],function(){},errorCallback); 
+ 
+   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)',[],function(){},errorCallback); 
+	  tx.executeSql('DELETE FROM items',[],function(){},errorCallback);
  
 	data.forEach( item =>
- tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")')
+ tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")',[],function(){},errorCallback)
  
 			 );
 });
@@ -231,8 +236,8 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
                for (i = 0; i < len; i++) { 
          rellenaitems(1,results.rows.item(i))
                } 
-            }, null); 
-         }); 
+            }, errorCallback); 
+         });  
 	
 	
 	db.transaction(function (tx) { 
@@ -243,7 +248,7 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
          rellenaitems(2,results.rows.item(i))
                } 
 			 
-            }, null); 
+            }, errorCallback); 
          }); 
 	
 }
