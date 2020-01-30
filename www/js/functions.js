@@ -16,7 +16,7 @@ var morrallatotal2=-1037087.75;
 var roturastotal2=336381.3;
 var altastotal2=919647.62;
 
-
+var db;
 var segmentos2=[
 	[["NDG","COMP. NDG","COMP. nespresso","tassimo"],"0a7298"],
 	[["grano","molido"],"a97733"],
@@ -80,7 +80,7 @@ if(negativo){
 	}
 }
 document.addEventListener("deviceready", function() {
-var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
+  db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
 
 
@@ -98,7 +98,21 @@ db.transaction(function (tx) {
  
 })
 
+  db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
+
+
+db.transaction(function (tx) {   
+	  tx.executeSql('DROP table items'); 
+	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)")
+   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
+	  tx.executeSql('DELETE FROM items');
+ 
+	data.forEach( item =>
+ tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")')
+ 
+			 );
+});
 
 function setuphome(){$(".botonhome").bind("click",startapp);
 					
