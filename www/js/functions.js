@@ -109,7 +109,7 @@ db.transaction(function (tx) {
 
 db.transaction(function (tx) {   
 	  tx.executeSql('DROP table items'); 
-	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)")
+ 
    tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
 	  tx.executeSql('DELETE FROM items');
  
@@ -119,27 +119,9 @@ db.transaction(function (tx) {
 			 );
 });
 
-function setuphome(){$(".botonhome").bind("click",startapp);
-					
-					
-var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
+function setuphome(){$(".botonhome").bind("click",startapp);					}
 
 
-
-db.transaction(function (tx) {   
-	 
-	alert("CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img22)")
-	  tx.executeSql('DROP table items'); 
-   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
-	  tx.executeSql('DELETE FROM items');
- 
-	data.forEach( item =>
- tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")')
- 
-			 );
-});
-
-					}
 function startapp(){ $(".teoricoactual").css("display","block");$(".homepage").css("display","none");$(".img").css("display","none").fadeIn("slow");
 $(".teoricoactual .botonfooter").click(f_lineal1)				   				   }
 function f_lineal1(){$(".lineal1").css("display","block");$(".teoricoactual").css("display","none");$(".img").css("display","none").fadeIn("slow");	$(".lineal1 .botonfooter").unbind("click").click(f_lineal3);}
@@ -227,11 +209,11 @@ $(".bloque3 .c21").html(number_format(morrallatotal,2)+"€");
 $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
 	$(".bloque3 .porc1").html(number_format(morrallatotal+roturastotal+altastotal,2)+"€");
  updatepg();
-	  alert(db);
+	//  alert(db);
  $(".repartowrapper").css("display","block").css("opacity",1);$(".lineal4").css("display","none");$(".img").css("display","none").fadeIn("slow");
  db.transaction(function (tx) { 
             tx.executeSql('SELECT * FROM items WHERE tipo="BAJA" ORDER by precio desc', [], function (tx, results) { 
-          alert(results);
+       alert(";;;;;;;;");
       len=results.rows.length;
                for (i = 0; i < len; i++) { 
          rellenaitems(1,results.rows.item(i))
