@@ -84,7 +84,7 @@ function errorCallback(err){
 alert(err);
 }
 
-document.addEventListener("deviceready", function() {
+function databasesetup(){
   db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
 
 
@@ -109,8 +109,7 @@ db.transaction(function (tx) {
    },errorCallback); 
 	
  
-})
- 
+}
 
 function setuphome(){$(".botonhome").bind("click",startapp);					}
 
