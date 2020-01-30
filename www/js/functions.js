@@ -92,32 +92,25 @@ document.addEventListener("deviceready", function() {
 db.transaction(function (tx) {   
 	  tx.executeSql('DROP table items',[],function(){},errorCallback); 
  
-   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)',[],function(){},errorCallback); 
-	  tx.executeSql('DELETE FROM items',[],function(){},errorCallback);
- 
+   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)',[],function(){
+	   
+	     tx.executeSql('DELETE FROM items',[],function(){
+		  
+		   
 	data.forEach( item =>
  tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")',[],function(){},errorCallback)
  
 			 );
+		  
+	  },errorCallback);
+
 });
+	   
+   },errorCallback); 
+	
  
 })
-
-  db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
-
-
-
-db.transaction(function (tx) {   
-	  tx.executeSql('DROP table items'); 
  
-   tx.executeSql('CREATE TABLE IF NOT EXISTS items (id integer primary key autoincrement,categoria,nombre,precio,tipo,img)'); 
-	  tx.executeSql('DELETE FROM items');
- 
-	data.forEach( item =>
- tx.executeSql('INSERT INTO items (id,categoria,nombre,precio,tipo,img) VALUES (null,"'+item[0]+'", "'+item[1]+'",'+item[2]+',"'+item[3]+'","'+item[4]+'")')
- 
-			 );
-});
 
 function setuphome(){$(".botonhome").bind("click",startapp);					}
 
