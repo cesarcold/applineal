@@ -7,21 +7,43 @@
 <link href="css/index.css" rel="stylesheet" type="text/css">
 		<link href="css/app.css" rel="stylesheet" type="text/css">
 				<link href="css/lity.css" rel="stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="css/lightslider.css" />       
 <script src="js/jquery.min.js"></script>	
  <script src="js/jcanvas.min.js"></script>	
 				 <script src="js/lity.js"></script>	
- 
+ <script src="js/lightslider.js"></script>
 		<script src="js/functions.js"></script>	
 		
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper"><div class="menuboton"></div>
+		<div class="menu"><ul><li onclick="setuphome()">Inicio</li><li onclick="startapp()">REPARTO ESPACIO LINEAL</li><li onclick="f_lineal1()">LINEAL ACTUAL</li>
+			<li onclick="f_lineal3()">EDITAR LINEAL ACTUAL</li>
+			<li onclick="f_lineal4()">LINEAL PROPUESTO</li>
+				<li onclick="f_reparto()">AJUSTES PROPUESTA CON CLIENTE </li>
+			</ul></div>
 		<div class="homepage"><div class="botonhome"></div></div>
 		</div>
 	 	<div class="teoricoactual">
 		<div class="top"><div class="logo"></div><div class="titulo"><strong>REPARTO ESPACIO LINEAL:</strong><span class="nl">TEÓRICO Y ACTUAL</span></div><div class="right"></div></div>
-<div class="img"><img src="img/reparto.png"/></div>
+<div class="img"> 
+			
+			<ul id="lightSlider" >
+  <li>
+   <img src="img/1-grafico.png">
+  </li>
+ <li>
+   <img src="img/2-grafico.png">
+  </li>
+				<li>
+   <img src="img/3-grafico.png">
+  </li>
+<li>
+   <img src="img/4-grafico.png">
+  </li>
+</ul>
+			</div>
 		<div class="footer"><img src="img/bonpreu.png"><div class="text">Gestión Categorías</div>
 			<div class="footerright"><div class="botonfooter">Ver Lineal Actual</div></div>
  </div>
@@ -184,6 +206,7 @@
 </body>
 	<script>
 $(document).ready(function() {
+	$(".menuboton").click(togglemenu)
  setuphome();databasesetup()
  }) 
 

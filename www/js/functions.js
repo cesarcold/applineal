@@ -111,22 +111,37 @@ db.transaction(function (tx) {
  
 }
 
-function setuphome(){$(".botonhome").bind("click",startapp);					}
+function setuphome(){	$(".homepage").css("display","block");$(".lineal3,.lineal2,.lineal4,.lineal1,.repartowrapper").css("display","none");$(".botonhome").bind("click",startapp);					}
 
 
 function startapp(){ $(".teoricoactual").css("display","block");$(".homepage").css("display","none");$(".img").css("display","none").fadeIn("slow");
-$(".teoricoactual .botonfooter").click(f_lineal1)				   				   }
-function f_lineal1(){$(".lineal1").css("display","block");$(".teoricoactual").css("display","none");$(".img").css("display","none").fadeIn("slow");	$(".lineal1 .botonfooter").unbind("click").click(f_lineal3);}
+$(".teoricoactual .botonfooter").click(f_lineal1)	;$(".lineal3,.lineal2,.lineal4,.lineal1,.repartowrapper,.homepage").css("display","none");			   			
+	$("#lightSlider").lightSlider({item:1,autoWidth:!0,slideMove:1,slideMargin:10,addClass:'',mode:"slide",useCSS:!1,cssEasing:'ease',easing:'linear',speed:400,auto:!1,loop:!1,slideEndAnimation:!0,pause:2000,keyPress:!1,controls:!0,prevHtml:'',nextHtml:'',rtl:!1,adaptiveHeight:!1,vertical:!1,verticalHeight:500,vThumbWidth:100,thumbItem:10,pager:!1,gallery:!1,galleryMargin:5,thumbMargin:5,currentPagerPosition:'middle',enableTouch:!0,enableDrag:!0,freeMove:!0,swipeThreshold:40,responsive:[],onBeforeStart:function(el){},onSliderLoad:function(el){},onBeforeSlide:function(el){},onAfterSlide:function(el){},onBeforeNextSlide:function(el){},onBeforePrevSlide:function(el){}})
+		   				   
+				   }
+
+
+function f_lineal1(){$(".hl").css("display","none"); $(".submenusubcategoria,.submenusegmentos").css("display","none");$(".linealimg").css("opacity",1);$(".lineal1").css("display","block");$(".teoricoactual").css("display","none");$(".img").css("display","none").fadeIn("slow");	$(".lineal1 .botonfooter").unbind("click").click(f_lineal3);
+					$(".lineal3,.lineal2,.lineal4,.teoricoactual,.repartowrapper,.homepage").css("display","none");
+					}
 function f_lineal2(){$(".lineal2").css("display","block");$(".lineal1").css("display","none");$(".img").css("display","none").fadeIn("slow");setupanalisis();
-		$(".lineal2 .botonfooter").unbind("click").click(f_lineal3); }
+		$(".lineal2 .botonfooter").unbind("click").click(f_lineal3); 
+					
+					$(".lineal3,.lineal1,.lineal4,.teoricoactual,.repartowrapper,.homepage").css("display","none");
+					}
 //function f_lineal3(){$(".lineal3").css("display","block");$(".lineal2").css("display","none");$(".img").css("display","none").fadeIn("slow");setupeditar();
 
 //^^paso intermedio que nos comemos, de momento
 
 function f_lineal3(){$(".lineal3").css("display","block");$(".lineal1").css("display","none");$(".img").css("display","none").fadeIn("slow");setupeditar();
- 	$(".lineal3 .botonfooter").unbind("click").click(f_lineal4);$(".top2").fadeIn("slow"); }
-function f_lineal4(){ $(".lineal4").css("display","block").css("opacity",1);$(".lineal3").css("display","none");$(".img").css("display","none").fadeIn("slow");
-/**/	$(".lineal4 .botonfooter").click(f_reparto)	;		   				   }
+ 	$(".lineal3 .botonfooter").unbind("click").click(f_lineal4);$(".top2").fadeIn("slow"); 
+											$(".lineal2,.lineal1,.lineal4,.teoricoactual,.repartowrapper,.homepage").css("display","none");
+					}
+function f_lineal4(){$(".hl").css("display","none"); $(".linealimg").css("opacity",1);$(".lineal4").css("display","block").css("opacity",1);$(".lineal3").css("display","none");$(".img").css("display","none").fadeIn("slow");
+/**/	$(".lineal4 .botonfooter").click(f_reparto)	;		
+					
+						$(".lineal2,.lineal1,.lineal3,.teoricoactual,.repartowrapper,.homepage").css("display","none");
+					}
 
 
 function redondeo(num){
@@ -195,7 +210,8 @@ function clickcheckbox(e){
 
 
 function f_reparto(){
-
+ 
+$(".lineal2,.lineal1,.lineal4,.lineal3,.teoricoactual,.homepage").css("display","none");
 $(".bloque3 .c21").html(number_format(morrallatotal,2)+"€");
 	$(".bloque3 .c22").html(number_format(roturastotal,2)+"€");
 $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
@@ -203,6 +219,7 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
  updatepg();
 	//  alert(db);
  $(".repartowrapper").css("display","block").css("opacity",1);$(".lineal4").css("display","none");$(".img").css("display","none").fadeIn("slow");
+	if($(".listitem").length==0){
  db.transaction(function (tx) { 
             tx.executeSql('SELECT * FROM items WHERE tipo="BAJA" ORDER by precio desc', [], function (tx, results) { 
      //  alert(";;;;;;;;");
@@ -224,7 +241,7 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
 			 
             }, errorCallback); 
          }); 
-	
+	}
 }
 
 function rellenaitems(n,item){
@@ -544,7 +561,9 @@ function verskussobredimensionados(){	$('#canvas1').remove();$(".lineal3 .img").
 function verskusinfradimensionados(){	$('#canvas1').remove();$(".lineal3 .img").append(canvashtml);$('#canvas1').drawImage({  source: 'img/lineal6.png',width: 1920, x: 960, y: 432,  height: 864});$(".lineal3 .top2 .ajustar").remove();$(".be3").unbind("click");$(".be4").fadeIn().click(veranadir);
 		$(".calctotal").html(number_format((parseFloat(morrallatotal)+parseFloat(roturastotal)),2)+"€");											
 									}
-function veraltas(){	$('#canvas1').remove();$(".lineal3 .img").append(canvashtml);$('#canvas1').drawImage({  source: 'img/lineal7.png',width: 1920, x: 960, y: 432,  height: 864});$(".lineal3 .top2 .anadir").remove();$(".be4").unbind("click"); }
+function veraltas(){	$('#canvas1').remove();$(".lineal3 .img").append(canvashtml);$('#canvas1').drawImage({  source: 'img/lineal7.png',width: 1920, x: 960, y: 432,  height: 864});$(".lineal3 .top2 .anadir").remove();$(".be4").unbind("click"); 
+				   $(".calctotal").html(number_format((parseFloat(morrallatotal)+parseFloat(roturastotal)+parseFloat(altastotal)),2)+"€");
+				   }
 
 function vervaciar1(){$(".lineal3 .top2").append("<div class='vaciar'>VACIAR</div>");$(".vaciar").slideDown().click(f_vaciar1);
 					 	$('#canvas1').remove();$(".lineal3 .img").append(canvashtml);$('#canvas1').drawImage({  source: 'img/linealc.png',width: 1920, x: 960, y: 432,  height: 864});}
@@ -634,4 +653,17 @@ $('#canvas1').drawImage({  source: 'img/lineal.png',width: 1920, x: 960, y: 432,
 	$(".be1").fadeIn().click(vervaciar1);
 }
 
+
+function togglemenu(){
+	if(!$(".menu").is(":visible")){
+$('.menu').css('display', 'block').css("opacity",0);
+		$(".menu").animate({right: '85px', opacity: 1 },'fast',''); 
+		
+	}else{
+		
+		$(".menu").animate({right: '0', opacity: 0 },'fast','',function(){	$('.menu').css('display', 'none')}); 
+		
+	}
+	
+}
 
