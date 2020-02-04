@@ -50,7 +50,7 @@ html {
 	display: none
 }
 .wrapper {
-	position: relative;
+	position: relative;height:1019px;overflow:hidden
 }
 .botonhome {
 	background-position: center top;

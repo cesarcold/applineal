@@ -10,11 +10,11 @@ var infradimensionados=["0-0","0-2","0-3","0-4","1-1","2-1"];
 var sobredimensionados=["0-1","1-0","2-0","2-2","2-3"];
 var morrallatotal=-1037087.75;
 var roturastotal=336381.3;
-var altastotal=919647.62;
+var altastotal=1336546.19;
 
 var morrallatotal2=-1037087.75;
 var roturastotal2=336381.3;
-var altastotal2=919647.62;
+var altastotal2=1336546.19;
 
 var db;
 var segmentos2=[
@@ -34,11 +34,10 @@ var submenucatv=false;
 data.push(new Array("Sistemas","NDG CORTADO MAGNUM (30CAPS)",171696.22,"ALTA","cortadomagnumndg"));
 data.push(new Array("Tostado","LAVAZZA MOLIDO CREMA E GUSTO 250G",151735.56,"BAJA","lavazzamolidocremaegusto250g"));
 data.push(new Array("Sistemas","NDG GRANDE INTENSO (16CAPS)",146412.53,"ALTA","grandeintensondg"));
-data.push(new Array("Sistemas","STARBUCKS BY NESPRESSO VERONA",144111.44,"ALTA","sbuxnespressoverona"));
-data.push(new Array("Sistemas","STARBUCKS BY NESPRESSO HOUSE BLEND",126428.33,"ALTA","sbuxnespressohouseblend"));
+data.push(new Array("Sistemas","SBX BY NESPRESSO - VERONA&HB",270539.77,"ALTA","sbuxnespressoverona"));
 data.push(new Array("Tostado","LAVAZZA GRANO ESPRESSO 500G",125966.88,"BAJA","lavazzagranocaffeespresso500g"));
 data.push(new Array("Tostado","LAVAZZA MOLIDO EXPRESS NATURAL 250G",125237.49,"BAJA","lavazzamolidocaffeespresso250gmolido2"));
-data.push(new Array("Soluble","MARCILLA CREME EXPRESS DESCAFEINADO 200G",114174.55,"BAJA","marcillasenseoextrafuerte28uds"));
+data.push(new Array("Soluble","MARCILLA CREME EXPRESS DESCAFEINADO2 00G",114174.55,"BAJA","marcillasenseoextrafuerte28uds"));
 data.push(new Array("Tostado","BONKA MOLIDO DESCAFEINADO 250G",100140.09,"ALTA","bonkamolidodescafeinado250g"));
 data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NDG ESPRESSO FORTE",94310.22,"BAJA","caferoyalespressoforte16capsulesndg"));
 data.push(new Array("Soluble","NESCAFÉ GOLD PURO COLOMBIA 100G",90873.94,"ALTA","nescafegoldoriginspurocolombia"));
@@ -46,12 +45,16 @@ data.push(new Array("Soluble","NESCAFÉ VITALISSIMO DESCAFEINADO 200G",90576.16,
 data.push(new Array("Sistemas","MARCILLA COMP.BLANDAS EXTRA FUERTE",87035.22,"BAJA","marcillasenseoextrafuerte28uds"));
 data.push(new Array("Sistemas","LAVAZZA A MODO MIO ESPRESSO INTENSO",81423.64,"BAJA","lavazzaespressointenso16capsulas"));
 data.push(new Array("Sistemas","LAVAZZA A MODO MIO DEK CREMOSO",69230.62,"BAJA","lavazzaespressodesdekcremoso16capsulas"));
-data.push(new Array("Sistemas","TASSIMO L'OR ESPRESSO DECAFFEINATO",60631.54 ,"BAJA","tassimolorespressodecaffeinato16capsulas"));
+data.push(new Array("Sistemas","TASSIMO L'OR ESPRESSO DECAFFEINATO",60631.54,"BAJA","tassimolorespressodecaffeinato16capsulas"));
 data.push(new Array("Tostado","BONKA MOLIDO ECOLÓGICO 250G",49408.91 ,"ALTA","bonkaecologico220g"));
 data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NDG DECAFFEINATO",48385.86 ,"BAJA","caferoyaldecaffeinato16capsulesndg"));
-data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NESPRESSO RISTRETTO INTENSO",40542.45 ,"BAJA","caferoyalristrettointensonespresso"));
-data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NDG CAFÉ CON LECHE",38413.72 ,"BAJA","caferoyalcafeaulait16capsulesndg"));
-
+data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NESPRESSO RISTRETTO INTENSO",40542.45,"BAJA","caferoyalristrettointensonespresso"));
+data.push(new Array("Sistemas","CAFÉ ROYAL COMP.NDG CAFÉ CON LECHE",38413.72,"BAJA","caferoyalcafeaulait16capsulesndg"));
+data.push(new Array("Sistemas","**NEW** CAFÉ CON LECHE DELICATO",70808.40,"ALTA","delicato"));
+data.push(new Array("Sistemas","**NEW** NDG - BEBIDAS VEGANAS",111674.16,"ALTA","ndgveganas"));
+data.push(new Array("Soluble","**NEW** NESCAFÉ GOLD ESPRESSO 100G",49635.88,"ALTA","goldespresso"));
+data.push(new Array("Soluble","**NEW** NESCAFÉ BLACK ROAST 200G",124549.70,"ALTA","blackroast"));
+data.push(new Array("Soluble","**NEW** CAPUCCINO - BEBIDA VEGANA",60230.43,"ALTA","capuccinovegana"));
 
 
 function number_format(amount, decimals) {
@@ -116,12 +119,12 @@ function setuphome(){	$(".homepage").css("display","block");$(".lineal3,.lineal2
 
 function startapp(){ $(".teoricoactual").css("display","block");$(".homepage").css("display","none");$(".img").css("display","none").fadeIn("slow");
 $(".teoricoactual .botonfooter").click(f_lineal1)	;$(".lineal3,.lineal2,.lineal4,.lineal1,.repartowrapper,.homepage").css("display","none");			   			
-	$("#lightSlider").lightSlider({item:1,autoWidth:!0,slideMove:1,slideMargin:10,addClass:'',mode:"slide",useCSS:!1,cssEasing:'ease',easing:'linear',speed:400,auto:!1,loop:!1,slideEndAnimation:!0,pause:2000,keyPress:!1,controls:!0,prevHtml:'',nextHtml:'',rtl:!1,adaptiveHeight:!1,vertical:!1,verticalHeight:500,vThumbWidth:100,thumbItem:10,pager:!1,gallery:!1,galleryMargin:5,thumbMargin:5,currentPagerPosition:'middle',enableTouch:!0,enableDrag:!0,freeMove:!0,swipeThreshold:40,responsive:[],onBeforeStart:function(el){},onSliderLoad:function(el){},onBeforeSlide:function(el){},onAfterSlide:function(el){},onBeforeNextSlide:function(el){},onBeforePrevSlide:function(el){}})
+	$("#lightSlider").lightSlider({item:1,autoWidth:!0,slideMove:1,slideMargin:10,addClass:'',mode:"slide",useCSS:!1,cssEasing:'ease',easing:'linear',speed:400,auto:!1,loop:!1,slideEndAnimation:!0,pause:2000,keyPress:!1,controls:!0,prevHtml:'',nextHtml:'',rtl:!1,adaptiveHeight:!1,vertical:!1,verticalHeight:500,vThumbWidth:100,thumbItem:10,pager:!1,gallery:!1,galleryMargin:5,thumbMargin:5,currentPagerPosition:'middle',slideEndAnimation:false,enableTouch:!0,enableDrag:!0,freeMove:!0,swipeThreshold:40,responsive:[],onBeforeStart:function(el){},onSliderLoad:function(el){},onBeforeSlide:function(el){},onAfterSlide:function(el){},onBeforeNextSlide:function(el){},onBeforePrevSlide:function(el){}})
 		   				   
 				   }
 
 
-function f_lineal1(){$(".hl").css("display","none"); $(".submenusubcategoria,.submenusegmentos").css("display","none");$(".linealimg").css("opacity",1);$(".lineal1").css("display","block");$(".teoricoactual").css("display","none");$(".img").css("display","none").fadeIn("slow");	$(".lineal1 .botonfooter").unbind("click").click(f_lineal3);
+function f_lineal1(){$(".hl").css("display","none");  $(".linealimg").css("opacity",1);$(".lineal1").css("display","block");$(".teoricoactual").css("display","none");$(".img").css("display","none").fadeIn("slow");	$(".lineal1 .botonfooter").unbind("click").click(f_lineal3);
 					$(".lineal3,.lineal2,.lineal4,.teoricoactual,.repartowrapper,.homepage").css("display","none");
 					}
 function f_lineal2(){$(".lineal2").css("display","block");$(".lineal1").css("display","none");$(".img").css("display","none").fadeIn("slow");setupanalisis();
@@ -217,6 +220,7 @@ $(".bloque3 .c21").html(number_format(morrallatotal,2)+"€");
 $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
 	$(".bloque3 .porc1").html(number_format(morrallatotal+roturastotal+altastotal,2)+"€");
  updatepg();
+	$(".listitem").remove();
 	//  alert(db);
  $(".repartowrapper").css("display","block").css("opacity",1);$(".lineal4").css("display","none");$(".img").css("display","none").fadeIn("slow");
 	if($(".listitem").length==0){
@@ -245,7 +249,7 @@ $(".bloque3 .c23").html(number_format(altastotal,2)+"€");
 }
 
 function rellenaitems(n,item){
-	
+	console.log(	$(".bloque"+n+" .list"));
 		$(".bloque"+n+" .list").append('<div class="listitem"><div class="itemimg"><img src="img/prods/'+item.img+'.png"></div><div class="itemdesc">'+item.nombre+'</div><div class="itemprize">'+number_format(item.precio,2)+' €</div><div class="itemtoggle">	<div class="checkbox-container yellow">		<input type="checkbox"  checked name="toggle'+item.id+'" id="toggle'+item.id+'" value="'+item.precio+'" rel-tipo="'+n+'"/>		<label for="toggle"></label>		<div class="active-circle"></div>	</div></div></div>')
 	$("#toggle"+item.id).click(clickcheckbox)
 }
@@ -286,7 +290,7 @@ function setupsubcategorias(){
 	$(".hl img").remove();$(".hl").fadeOut();
 	$(".lineal1 .top2 .subtitulo").html('PLANO DE MASAS POR SUBCATEGORÍA');
 	for(i=0;i<subcategorias.length;i++){
-	 $(".lineal1 .submenusubcategoria,.lineal .linealimg").css("opacity",1);
+	 $(".lineal1 .submenusubcategoria,.lineal .linealimg").css("opacity",1).fadeIn();
 				$(".lineal1 .submenusubcategoria").append("<div class='botonsubcat' data-num='"+i+"' onclick='hlcategoria("+i+")'>"+subcategorias[i][0]+"</div>")
 		
 	}
@@ -585,13 +589,15 @@ function f_ajustar2(){loading('Ajustando SKU’s Infradimensionadas');oscurecerl
 function prereorganizar(){$(".loader img").attr("src","img/52.svg");$(".loadertxt").html("Reorganizando lineal").fadeIn(); $(".loader img").fadeIn(); $(".botonreorg").fadeOut();setTimeout(reorganizar,2500)}
 function reorganizar(){quitarloading();verskusinfradimensionados()}
 
-function f_anadir(){loading('Ajustando altas');oscurecerlineal('img/lineal6.png');setTimeout(function(){quitarloading();veraltas();},2000)}
+function f_anadir(){loading('Ajustando altas');oscurecerlineal('img/lineal6.png');setTimeout(function(){quitarloading();veraltas();},2000);
+				   //$(".propuestas").css("display","none");
+				   }
 	var categorias=["Sistemas","Soluble","Tostado"];
 
 function f_propuestas(){
-	$("body").append("<div class='propuestas' id='propuestas'><h4>Propuestas de alta</h4><div class='pcols'><div class='pcol pcol0'><h5>Cápsulas de Café</h5></div><div class='pcol pcol1'><h5>Café soluble</h5></div><div class='pcol pcol2'><h5>Cápsulas molido y grano</h5></div></div><div class='b_anadir' data-lity-close  onclick='f_anadir()'>Añadir al lineal</div></div>");
+	$(".wrapper").append("<div class='propuestas' id='propuestas'><h4>Propuestas de alta</h4><div class='pcols'><div class='pcol pcol0'><h5>Cápsulas de Café</h5></div><div class='pcol pcol1'><h5>Café soluble</h5></div><div class='pcol pcol2'><h5>Cápsulas molido y grano</h5></div></div><div class='b_anadir' data-lity-close  onclick='f_anadir()'>Añadir al lineal</div></div>");
 
- 
+ $(".propuestas .listitem").remove();
  	 
 	db.transaction(function (tx) { 
  
